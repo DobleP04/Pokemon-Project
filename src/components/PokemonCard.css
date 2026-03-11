@@ -9,6 +9,11 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
+}
+
+.pokemon-card:hover {
+    background-color: orange;
 }
 
 .text {

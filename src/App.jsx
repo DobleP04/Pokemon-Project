@@ -3,15 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonList from './components/PokemonList'
+import PokemonDetails from './components/PokemonDetails'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [selectedPokemon, setSelectedPokemon] = useState();
   return (
     <>
-      <h2>Pokemon Project</h2>
-
-      <PokemonList></PokemonList>
+      {selectedPokemon && (
+        <div>
+          <h2>Pokemon Seleccionado</h2>
+          <PokemonDetails pokemon={selectedPokemon}></PokemonDetails>
+        </div>
+      )}
+      <h2>Pokemon List</h2>
+      <PokemonList selectPokemon={setSelectedPokemon}></PokemonList>
     </>
   )
 }
